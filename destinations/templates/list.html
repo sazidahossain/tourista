@@ -7,18 +7,20 @@
 
 
 
-<div class="row">
+
 
   {% for destination in destinations %}
+	  <div class="card " style="width: 18rem;">
+	   <img class="card-img-top" src="{{destination.pretty_picture.url}}"  alt="Card image cap">
+	  <div class="card-img-overlay">
+	    <h4 class="card-title"><font color="white">{{destination.name}}</h4>
+	    <p class="card-text"><font color="white">{{destination.activities}}</p>
+	    <a href="{% url 'destination-detail' destination.id %}" class="btn btn-primary">See More.</a>
+	    
+	    </div>
+	  </div><div class="card-deck">
 
-<div class="card bg-dark text-white col-6  d-flex align-item-stretch">
-  <img class="card-img img-fluid" src="{{destination.pretty_picture.url}}" >
-  <div class="card-img-overlay">
-    <h5 class="card-title">{{destination.name}}</h5>
-    <p class="card-text">{{destination.activities}}</p>
-    <p href="{% url 'destination-detail' destination.id %}">Last updated 3 mins ago</p>
-  </div>
-</div>
+	</div>  
 
   {% endfor %}
 </div>
